@@ -42,13 +42,13 @@ suite('Unit Tests', function(){
     
     test('Invalid Input (double fraction)', function(done) {
       var input = '5.5/4/3mi';
-      assert.isNotOk(convertHandler.getNum(input));
+      assert.equal(convertHandler.getNum(input), undefined);
       done();
     });
     
     test('No Numerical Input', function(done) {
       var input = '';
-      assert.isNotOk(convertHandler.getNum(input));
+      assert.equal(convertHandler.getNum(input), null);
       done();
     }); 
     
@@ -66,7 +66,7 @@ suite('Unit Tests', function(){
     
     test('Unknown Unit Input', function(done) {
       var input = 'megaton';
-      assert.isNotOk(convertHandler.getUnit(input));
+      assert.equal(convertHandler.getUnit(input), null);
       done();
     });  
     
